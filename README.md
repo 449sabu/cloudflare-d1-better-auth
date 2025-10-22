@@ -32,3 +32,21 @@ wrangler secret list
 # シークレットを削除
 wrangler secret delete <SECRET_NAME>
 ```
+
+### drizzle ファイル構成
+D1データベースに反映するまでの手順
+1. `db`配下にdrizzleでスキーマファイルを作成する。
+2. 
+
+```bash
+./
+├── schema # drizzle用のスキーマファイル
+│   ├── schema.ts 
+│   └── auth-schema.ts # better-auth CLI で自動生成されるファイル
+├── drizzle # migrationファイル
+│   ├── _meta
+│   │   └── 0000_snapshot.json
+│   └── 0000_init.sql # generateコマンドで生成されるsqlファイル
+├── drizzle.config.ts # configファイル
+└── wrangler.jsonc
+```

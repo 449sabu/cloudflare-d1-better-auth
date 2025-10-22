@@ -17,7 +17,8 @@
 		{
 			"binding": "sample_db",
 			"database_name": "sample-db",
-			"database_id": "deb7ce46-968d-4f91-84b8-570548fde88d"
+			"database_id": "deb7ce46-968d-4f91-84b8-570548fde88d",
+			"migrations_dir": "./drizzle"
 		}
 	]
 	/**
