@@ -12,8 +12,7 @@
 		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b",
 		"generate": "drizzle-kit generate",
 		"migrate:local": "wrangler d1 migrations apply sample-db --local",
-		"migrate:remote": "wrangler d1 migrations apply sample-db --remote",
-		"studio": "drizzle-kit studio"
+		"migrate:remote": "wrangler d1 migrations apply sample-db --remote"
 	},
 	"dependencies": {
 		"drizzle-orm": "^0.44.6",

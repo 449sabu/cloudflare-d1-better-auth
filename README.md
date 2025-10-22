@@ -35,8 +35,8 @@ wrangler secret delete <SECRET_NAME>
 
 ### drizzle ファイル構成
 D1データベースに反映するまでの手順
-1. `db`配下にdrizzleでスキーマファイルを作成する。
-2. 
+1. `db`配下にdrizzleでschemaファイルを作成する。
+2. `pnpm generate`でschemaファイルからmigrationファイルを生成する。
 
 ```bash
 ./

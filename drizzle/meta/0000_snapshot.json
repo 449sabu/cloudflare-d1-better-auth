@@ -1,0 +1,42 @@
+{
+	"version": "6",
+	"dialect": "sqlite",
+	"id": "b203d1dd-8787-4ecf-b3ac-e5ddca3dfe08",
+	"prevId": "00000000-0000-0000-0000-000000000000",
+	"tables": {
+		"point_table": {
+			"name": "point_table",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "integer",
+					"primaryKey": true,
+					"notNull": true,
+					"autoincrement": true
+				},
+				"name": {
+					"name": "name",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true,
+					"autoincrement": false
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
+			"checkConstraints": {}
+		}
+	},
+	"views": {},
+	"enums": {},
+	"_meta": {
+		"schemas": {},
+		"tables": {},
+		"columns": {}
+	},
+	"internal": {
+		"indexes": {}
+	}
+}
