@@ -1,8 +1,34 @@
 ## Project Stacks
 
 - frontend: [React Router v7](https://reactrouter.com/home)
+- ORM: [drizzle](https://orm.drizzle.team/docs/get-started)
 - format/lint: [Biome](https://biomejs.dev/ja/guides/getting-started/)
 - Git Hooks: [lefthook](https://lefthook.dev/intro.html)
 
 - Deploy: [Cloudflare Pages](https://developers.cloudflare.com/pages/)
 - Database: [Cloudflare D1](https://developers.cloudflare.com/d1/)
+
+
+### Cloudflare D1 データベースの作成
+`wrangler`コマンドでD1データベースを作成する。
+```bash
+wrangler d1 create <DATABASE_NAME>
+# Example: wrangler d1 create my-project-db
+```
+https://developers.cloudflare.com/d1/wrangler-commands/#d1-create
+
+
+### Secret Variables
+ローカル開発時は`.dev.vars`を使用して環境変数を管理する。
+本番環境の環境変数は`wrangler secret`コマンドで管理できる。
+```bash
+# プロジェクトのサンプルから必要な設定をコピーできます。
+cp .env.example .dev.vars
+
+#  シークレットを登録
+wrangler secret put <SECRET_NAME>
+# 登録済みのシークレット一覧を表示
+wrangler secret list
+# シークレットを削除
+wrangler secret delete <SECRET_NAME>
+```
