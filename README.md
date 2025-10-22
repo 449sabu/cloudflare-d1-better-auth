@@ -2,6 +2,7 @@
 
 - frontend: [React Router v7](https://reactrouter.com/home)
 - ORM: [drizzle](https://orm.drizzle.team/docs/get-started)
+- UI/Styling: [shadcn ui](https://ui.shadcn.com/docs/installation/react-router)
 - format/lint: [Biome](https://biomejs.dev/ja/guides/getting-started/)
 - Git Hooks: [lefthook](https://lefthook.dev/intro.html)
 
