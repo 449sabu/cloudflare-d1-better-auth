@@ -11,6 +11,7 @@
 		"preview": "pnpm run build && vite preview",
 		"typecheck": "npm run cf-typegen && react-router typegen && tsc -b",
 		"generate": "drizzle-kit generate",
+		"auth:generate": "pnpm dlx @better-auth/cli@latest generate --output=./schema/auth-schema.ts --config=./auth.ts --yes ",
 		"migrate:local": "wrangler d1 migrations apply sample-db --local",
 		"migrate:remote": "wrangler d1 migrations apply sample-db --remote"
 	},
@@ -18,6 +19,7 @@
 		"@radix-ui/react-label": "^2.1.7",
 		"@radix-ui/react-separator": "^1.1.7",
 		"@radix-ui/react-slot": "^1.2.3",
+		"better-auth": "^1.3.29",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"drizzle-orm": "^0.44.6",
