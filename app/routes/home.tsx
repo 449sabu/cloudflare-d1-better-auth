@@ -14,19 +14,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 	const { message } = loaderData;
 	return (
 		<div>
-			<Link to="/signup" className="flex items-center gap-2 self-center font-medium">
-				<div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-					<GalleryVerticalEnd className="size-4" />
-				</div>
-				Sign Up
-			</Link>
-			<Link to="/dashboard" className="flex items-center gap-2 self-center font-medium">
-				<div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-					<GalleryVerticalEnd className="size-4" />
-				</div>
-				Look at Dashboard
-			</Link>
-			<p>{message}</p>
+			<p className="text-center">{message}</p>
 		</div>
 	);
 }
