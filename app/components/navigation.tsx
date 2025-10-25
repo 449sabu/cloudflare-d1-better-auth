@@ -42,6 +42,18 @@ export function Navigation() {
 			>
 				Sign Up
 			</NavLink>
+			<NavLink
+				to="/signin"
+				className={({ isActive, isPending, isTransitioning }) =>
+					[
+						isPending ? 'pending' : '',
+						isActive ? 'text-blue-500 font-bold' : '',
+						isTransitioning ? 'transitioning' : '',
+					].join('')
+				}
+			>
+				Sign In
+			</NavLink>
 		</nav>
 	);
 }

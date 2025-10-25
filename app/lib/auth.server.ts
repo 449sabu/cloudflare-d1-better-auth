@@ -16,7 +16,7 @@ export function createAuthServer(env: Env): ReturnType<typeof betterAuth> {
 		baseURL: env.BETTER_AUTH_URL,
 		emailAndPassword: {
 			enabled: true,
-			requireEmailVerification: true,
+			// requireEmailVerification: true,
 		},
 		socialProviders: {
 			github: {
@@ -26,6 +26,15 @@ export function createAuthServer(env: Env): ReturnType<typeof betterAuth> {
 			google: {
 				clientId: env.OAUTH_GOOGLE_CLIENT_ID,
 				clientSecret: env.OAUTH_GOOGLE_CLIENT_SECRET,
+			},
+		},
+		user: {
+			// https://www.better-auth.com/docs/concepts/users-accounts#change-email
+			changeEmail: {
+				enabled: true,
+			},
+			deleteUser: {
+				enabled: true,
 			},
 		},
 	});

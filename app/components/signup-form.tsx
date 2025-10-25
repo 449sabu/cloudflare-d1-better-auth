@@ -4,13 +4,36 @@ import { Button } from '~/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '~/components/ui/card';
 import { Field, FieldDescription, FieldGroup, FieldLabel } from '~/components/ui/field';
 import { Input } from '~/components/ui/input';
+import { authClient } from '~/lib/auth.client';
 import { cn } from '~/lib/utils';
 
-export function SignupForm({ className, ...props }: React.ComponentProps<'div'>) {
+export async function SignupForm({ className, ...props }: React.ComponentProps<'div'>) {
 	const nameId = useId();
 	const emailId = useId();
 	const passwordId = useId();
 	const confirmPasswordId = useId();
+
+	// const { data, error } = await authClient.signUp.email({
+	//         email, // user email address
+	//         password, // user password -> min 8 characters by default
+	//         name, // user display name
+	//         image, // User image URL (optional)
+	//         callbackURL: "/dashboard" // A URL to redirect to after the user verifies their email (optional)
+	//     }, {
+	//         onRequest: (ctx) => {
+	//             //show loading
+	// 			console.log('loading...');
+	//         },
+	//         onSuccess: (ctx) => {
+	//             //redirect to the dashboard or sign in page
+	// 			console.log('success!');
+	//         },
+	//         onError: (ctx) => {
+	//             // display the error message
+	//             alert(ctx.error.message);
+	//         },
+	// });
+
 	return (
 		<div className={cn('flex flex-col gap-6', className)} {...props}>
 			<Card>
