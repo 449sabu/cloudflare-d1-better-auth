@@ -4,17 +4,14 @@ import { useId } from 'react';
 import { Form } from 'react-router';
 import { Button } from '~/components/ui/button';
 import { Input } from '~/components/ui/input';
-import { pointTable } from '../../schema/point';
+import { pointTable } from '../../../schema/point';
 import type { Route } from './+types/dashboard';
 
 export async function loader({ context }: Route.LoaderArgs) {
 	const db = drizzle(context.cloudflare.env.sample_db);
 	const points = await db.select().from(pointTable);
 
-	console.log(points);
-
 	return {
-		message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE,
 		points,
 	};
 }

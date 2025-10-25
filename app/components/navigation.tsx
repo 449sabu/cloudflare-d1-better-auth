@@ -1,59 +1,30 @@
 import { NavLink } from 'react-router';
 
 export function Navigation() {
+	const navigationLinks = [
+		{ to: '/', label: 'Home' },
+		{ to: '/user/dashboard', label: 'Dashboard' },
+		{ to: '/user/settings', label: 'Settings' },
+		// { to: '/auth/signup', label: 'Sign Up' },
+		{ to: '/auth/signin', label: 'Sign In' },
+	];
 	return (
 		<nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 flex justify-center gap-4 items-center px-4 py-2">
-			{/* <div className="flex justify-around items-center py-2">
-				<div className="text-sm font-medium text-gray-700">Navigation</div>
-			</div> */}
-			<NavLink
-				to="/"
-				className={({ isActive, isPending, isTransitioning }) =>
-					[
-						isPending ? 'pending' : '',
-						isActive ? 'text-blue-500 font-bold' : '',
-						isTransitioning ? 'transitioning' : '',
-					].join('')
-				}
-			>
-				Home
-			</NavLink>
-			<NavLink
-				to="/dashboard"
-				className={({ isActive, isPending, isTransitioning }) =>
-					[
-						isPending ? 'pending' : '',
-						isActive ? 'text-blue-500 font-bold' : '',
-						isTransitioning ? 'transitioning' : '',
-					].join('')
-				}
-			>
-				Dashboard
-			</NavLink>
-			<NavLink
-				to="/signup"
-				className={({ isActive, isPending, isTransitioning }) =>
-					[
-						isPending ? 'pending' : '',
-						isActive ? 'text-blue-500 font-bold' : '',
-						isTransitioning ? 'transitioning' : '',
-					].join('')
-				}
-			>
-				Sign Up
-			</NavLink>
-			<NavLink
-				to="/signin"
-				className={({ isActive, isPending, isTransitioning }) =>
-					[
-						isPending ? 'pending' : '',
-						isActive ? 'text-blue-500 font-bold' : '',
-						isTransitioning ? 'transitioning' : '',
-					].join('')
-				}
-			>
-				Sign In
-			</NavLink>
+			{navigationLinks.map((link) => (
+				<NavLink
+					key={link.to}
+					to={link.to}
+					className={({ isActive, isPending, isTransitioning }) =>
+						[
+							isPending ? 'pending' : '',
+							isActive ? 'text-blue-500 font-bold' : '',
+							isTransitioning ? 'transitioning' : '',
+						].join('')
+					}
+				>
+					{link.label}
+				</NavLink>
+			))}
 		</nav>
 	);
 }

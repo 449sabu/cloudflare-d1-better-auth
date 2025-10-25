@@ -20,6 +20,12 @@ export default function SigninPage() {
 		});
 	}
 
+	async function handleRevokeSession() {
+		await authClient.revokeSession({
+			token: 'session-token',
+		});
+	}
+
 	async function handleUseSession() {
 		const { data: session } = await authClient.getSession();
 		console.log(session);
@@ -48,6 +54,7 @@ export default function SigninPage() {
 			</Form>
 			<Button onClick={handleSignOut}>Sign Out</Button>
 			<Button onClick={handleUseSession}>use Session</Button>
+			<Button onClick={handleRevokeSession}>Revoke Session</Button>
 			<Button onClick={handleGithub}>Github</Button>
 			<Button onClick={handleGoogle}>Google</Button>
 		</div>
