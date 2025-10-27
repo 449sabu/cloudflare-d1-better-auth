@@ -33,6 +33,7 @@ export function createAuthServer(env: Env): ReturnType<typeof betterAuth> {
 			changeEmail: {
 				enabled: true,
 			},
+			// https://www.better-auth.com/docs/concepts/users-accounts#delete-user
 			deleteUser: {
 				enabled: true,
 			},

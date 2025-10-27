@@ -10,6 +10,8 @@ export default [
 				route('/settings', 'routes/user/settings.tsx'),
 			]),
 		]),
-		...prefix('auth', [route('/signup', 'routes/auth/signup.tsx'), route('/signin', 'routes/auth/signin.tsx')]),
+		layout('routes/auth/layout.tsx', [
+			...prefix('auth', [route('/signup', 'routes/auth/signup.tsx'), route('/signin', 'routes/auth/signin.tsx')]),
+		]),
 	]),
 ] satisfies RouteConfig;

@@ -8,7 +8,7 @@
 
 - Deploy: [Cloudflare Pages](https://developers.cloudflare.com/pages/)
 - Database: [Cloudflare D1](https://developers.cloudflare.com/d1/)
-
+- Placeholder Image: [PlaceHold](https://placehold.co/)
 
 ### Cloudflare D1 データベースの作成
 `wrangler`コマンドでD1データベースを作成する。

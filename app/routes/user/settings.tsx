@@ -1,4 +1,4 @@
-import { LogOut } from 'lucide-react';
+import { LogOut, Trash2 } from 'lucide-react';
 import { redirect, useNavigate } from 'react-router';
 import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar';
 import { Button } from '~/components/ui/button';
@@ -38,6 +38,15 @@ export default function SettingsPage({ loaderData }: Route.ComponentProps) {
 		});
 	}
 
+	async function handleDeleteAccount() {
+		await authClient.deleteUser({
+			fetchOptions: {
+				onSuccess: () => {
+					navigate('/auth/signin'); // redirect to login page
+				},
+			},
+		});
+	}
 	return (
 		<div className="w-full max-w-4xl">
 			<FieldSet>
@@ -62,6 +71,18 @@ export default function SettingsPage({ loaderData }: Route.ComponentProps) {
 						</FieldContent>
 						<Button variant="outline" onClick={handleSignOut}>
 							<LogOut className="mx-4" />
+						</Button>
+					</Field>
+					<FieldSeparator />
+					<Field orientation="horizontal">
+						<FieldContent>
+							<FieldLabel>アカウント削除</FieldLabel>
+							<FieldDescription className="text-destructive">
+								一度アカウントを削除すると復元できません。
+							</FieldDescription>
+						</FieldContent>
+						<Button variant="destructive" onClick={handleDeleteAccount}>
+							<Trash2 className="mx-4" />
 						</Button>
 					</Field>
 				</FieldGroup>
