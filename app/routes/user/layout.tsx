@@ -1,4 +1,5 @@
 import { Outlet, redirect } from 'react-router';
+import { Navigation } from '~/components/navigation';
 import { validateSessionToken } from '~/lib/cookie';
 import type { Route } from './+types/layout';
 
@@ -19,8 +20,11 @@ export const middleware: Route.MiddlewareFunction[] = [authMiddleware];
 
 export default function UserLayout() {
 	return (
-		<div>
-			<Outlet />
+		<div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+			<div className="flex w-full max-w-sm flex-col gap-6">
+				<Outlet />
+				<Navigation />
+			</div>
 		</div>
 	);
 }
