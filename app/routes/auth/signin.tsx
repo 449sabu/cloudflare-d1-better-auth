@@ -12,16 +12,6 @@ export default function SigninPage() {
 	const emailId = useId();
 	const passwordId = useId();
 
-	async function handleSignOut() {
-		await authClient.signOut({
-			fetchOptions: {
-				onSuccess: () => {
-					redirect('/'); // redirect to login page
-				},
-			},
-		});
-	}
-
 	async function handleRevokeSession() {
 		const { data: session } = await authClient.getSession();
 
@@ -85,8 +75,6 @@ export default function SigninPage() {
 		// 	<Button onClick={handleUseSession}>use Session</Button>
 		// 	<Button onClick={handleRevokeSession}>Revoke Session</Button>
 		// 	<Button onClick={handleRevokeAllSessions}>Revoke All Sessions</Button>
-		// 	<Button onClick={handleGithub}>Github</Button>
-		// 	<Button onClick={handleGoogle}>Google</Button>
 		// </div>
 	);
 }

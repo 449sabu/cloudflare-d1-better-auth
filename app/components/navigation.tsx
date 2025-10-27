@@ -5,8 +5,6 @@ export function Navigation() {
 		{ to: '/', label: 'Home' },
 		{ to: '/user/dashboard', label: 'Dashboard' },
 		{ to: '/user/settings', label: 'Settings' },
-		// { to: '/auth/signup', label: 'Sign Up' },
-		{ to: '/auth/signin', label: 'Sign In' },
 	];
 	return (
 		<nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 flex justify-center gap-4 items-center px-4 py-2">
