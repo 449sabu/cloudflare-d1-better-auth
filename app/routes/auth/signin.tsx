@@ -25,34 +25,6 @@ export default function SigninPage() {
 		console.log(data);
 	}
 
-	// async function handleRevokeSession() {
-	// 	const { data: session } = await authClient.getSession();
-
-	// 	if (!session) {
-	// 		console.error('No session token found');
-	// 		return;
-	// 	}
-
-	// 	await authClient.revokeSession({
-	// 		// token: session?.session.token,
-	// 		token: 'zkbAZV3GeObl4F8MTff4wB2ztZiKnGyZ',
-	// 	});
-	// }
-
-	// async function handleRevokeAllSessions() {
-	// 	await authClient.revokeSessions();
-	// }
-
-	// async function handleClientSignIn() {
-	// 	const { data, error } = await authClient.signIn.email({
-	// 		email: '449sabu@gmail.com', // required
-	// 		password: 'Ogawa4869', // required
-	// 		rememberMe: true,
-	// 		callbackURL: 'http://localhost:5173/user/dashboard',
-	// 	});
-	// 	console.log(data, error);
-	// }
-
 	return (
 		<div className="flex flex-col gap-6">
 			<Form method="post">
@@ -65,7 +37,7 @@ export default function SigninPage() {
 					</div>
 					<Field>
 						<FieldLabel htmlFor="email">Email</FieldLabel>
-						<Input id={emailId} type="email" placeholder="m@example.com" required />
+						<Input id={emailId} name="email" type="email" placeholder="m@example.com" required />
 					</Field>
 					<Field>
 						<div className="flex items-center">
@@ -74,7 +46,7 @@ export default function SigninPage() {
 								Forgot your password?
 							</a>
 						</div>
-						<Input id={passwordId} type="password" required />
+						<Input id={passwordId} name="password" type="password" required />
 					</Field>
 					<Field>
 						<Button type="submit">Login</Button>
@@ -132,6 +104,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 					rememberMe: true,
 					callbackURL: `${context.cloudflare.env.BETTER_AUTH_URL}/user/settings`,
 				},
+				// headers: await headers(),
 			});
 			console.log(data);
 			return redirect(`${context.cloudflare.env.BETTER_AUTH_URL}/user/settings`);
